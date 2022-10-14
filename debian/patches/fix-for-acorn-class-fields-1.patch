@@ -1,0 +1,18 @@
+Description: fix for acorn-class-fields ≥ 1
+Author: Yadd <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/997578
+Forwarded: not-needed
+Last-Update: 2021-10-27
+
+--- a/test/test.js
++++ b/test/test.js
+@@ -68,9 +68,6 @@
+ 
+ 		'imported': `
+ 			import { foo as bar } from 'x';`,
+-
+-		'class field': `
+-			class Bar { foo = 1; }`,
+ 	};
+ 
+ 	describe('positive', () => {
