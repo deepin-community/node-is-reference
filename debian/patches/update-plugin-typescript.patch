@@ -1,0 +1,60 @@
+Description: update to @rollup/plugin-typescript
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2021-12-14
+
+--- a/package.json
++++ b/package.json
+@@ -2,12 +2,11 @@
+   "name": "is-reference",
+   "version": "1.2.1",
+   "description": "Determine whether an AST node is a reference",
+-  "main": "dist/is-reference.js",
+-  "module": "dist/is-reference.es.js",
+-  "types": "dist/types/index.d.ts",
++  "main": "dist/index.js",
++  "module": "dist/es/index.js",
++  "types": "dist/es/types/index.d.ts",
+   "files": [
+-    "dist/*.js",
+-    "dist/types/**/*.d.ts"
++    "dist"
+   ],
+   "scripts": {
+     "test": "mocha",
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,14 +1,17 @@
+-import typescript from 'rollup-plugin-typescript';
++import typescript from '@rollup/plugin-typescript';
+ 
+ export default {
+ 	input: 'src/index.ts',
+ 	output: [{
+-		file: 'dist/is-reference.js',
+-		format: 'umd',
++        dir: "dist",
++		//file: 'dist/is-reference.js',
++		format: 'commonjs',
+ 		name: 'isReference'
+ 	}, {
+-		file: 'dist/is-reference.es.js',
+-		format: 'es'
++        dir: "dist/es",
++		//file: 'dist/is-reference.es.js',
++		format: 'es',
++        name: 'is-reference'
+ 	}],
+ 	plugins: [
+ 		typescript({
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -7,7 +7,7 @@
+ 		"target": "es5",
+ 		"lib": ["es5", "es6"],
+ 		"declaration": true,
+-		"outDir": "dist/types"
++		"outDir": "dist/es/types"
+ 	},
+ 	"include": [
+ 		"src"

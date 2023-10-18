@@ -1,3 +1,19 @@
+node-is-reference (1.2.1-7) unstable; urgency=medium
+
+  * Team upload
+  * Update standards version to 4.6.1, no changes needed.
+  * Add fix for rollup 3 (Closes: #1022642)
+
+ -- Yadd <yadd@debian.org>  Thu, 27 Oct 2022 12:30:12 +0200
+
+node-is-reference (1.2.1-6) unstable; urgency=medium
+
+  * Team upload
+  * Drop nodejs dependency
+  * Update to @rollup/plugin-typescript
+
+ -- Yadd <yadd@debian.org>  Tue, 14 Dec 2021 12:39:24 +0100
+
 node-is-reference (1.2.1-5) unstable; urgency=medium
 
   * Team upload
