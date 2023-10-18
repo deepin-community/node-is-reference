@@ -1,1 +1,3 @@
 fix-for-acorn-class-fields-1.patch
+update-plugin-typescript.patch
+fix-for-rollup-3.patch
